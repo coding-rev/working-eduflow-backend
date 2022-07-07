@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class QuestionsService {
@@ -20,6 +21,7 @@ public class QuestionsService {
 
     // Get all questions from the database
     public List<Questions> getAllQuestions() {
+
         return questionRepo.findAll();
     }
 

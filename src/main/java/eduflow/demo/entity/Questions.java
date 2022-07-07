@@ -71,4 +71,12 @@ public class Questions implements Serializable {
     public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
     }
+
+    public Integer getQuestion_id() {
+        return question_id;
+    }
+
+    public void setQuestion_id(Integer question_id) {
+        this.question_id = question_id;
+    }
 }
