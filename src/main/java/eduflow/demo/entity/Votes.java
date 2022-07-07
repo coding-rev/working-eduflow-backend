@@ -1,14 +1,18 @@
 package eduflow.demo.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Votes")
 public class Votes {
 
+    @Id
+    @GeneratedValue
+    private int votes_id;
     private int user_id;
-    private int replies_id;
 
-    public Votes(int user_id, int replies_id) {
-        this.user_id = user_id;
-        this.replies_id = replies_id;
-    }
+
+    private int replies_id;
 
     public int getUser_id() {
         return user_id;

@@ -10,15 +10,16 @@ import java.util.List;
 @Service
 public class QuestionsService {
 
-    private final QuestionsRepository questionRepo;
-
     @Autowired
+    private QuestionsRepository questionRepo;
+
     public QuestionsService(QuestionsRepository questionRepo) {
         this.questionRepo = questionRepo;
     }
 
+
     // Get all questions from the database
-    public List<Questions> getAllQuestion() {
+    public List<Questions> getAllQuestions() {
         return questionRepo.findAll();
     }
 

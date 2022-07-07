@@ -10,12 +10,11 @@ import java.util.List;
 @Service
 public class CategoryService {
 
-    private final CategoryRepository categoryRepo;
-
     @Autowired
-    public CategoryService(CategoryRepository categoryRepo) {
-        this.categoryRepo = categoryRepo;
-    }
+    private CategoryRepository categoryRepo;
+
+
+
 
     public List<Category> getAllCategories() {
         return categoryRepo.findAll();

@@ -1,14 +1,20 @@
 package eduflow.demo.entity;
 
-public class Category {
-    private Integer category_id;
-    private String category;
-    private String icon;
+import javax.persistence.*;
 
-    public Category(String category, String icon) {
-        this.category = category;
-        this.icon = icon;
-    }
+@Entity
+@Table(name = "Category")
+public class Category {
+
+    @Id
+    @GeneratedValue
+    private Integer category_id;
+
+    @Column(name = "category")
+    private String category;
+
+    @Column(name = "icon")
+    private String icon;
 
     public String getCategory() {
         return category;

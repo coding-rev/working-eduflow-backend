@@ -1,25 +1,27 @@
 package eduflow.demo.entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Questions {
+@Entity
+@Table(name = "Questions")
+public class Questions implements Serializable {
 
+    @Id
+    @GeneratedValue
     private Integer question_id;
+
     private int user_id;
     private int category_id;
+    @Column(name = "title")
     private String title;
+    @Column(name = "text")
     private String text;
+    @Column(name = "created_at")
     private Date created_at;
+    @Column(name = "updated_at")
     private Date updated_at;
-
-    public Questions(int user_id, int category_id, String title, String text, Date created_at, Date updated_at) {
-        this.user_id = user_id;
-        this.category_id = category_id;
-        this.title = title;
-        this.text = text;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-    }
 
 
     public int getUser_id() {
