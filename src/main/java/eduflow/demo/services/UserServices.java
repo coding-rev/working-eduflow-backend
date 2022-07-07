@@ -1,6 +1,7 @@
 package eduflow.demo.services;
 
 import eduflow.demo.Repository.UserRepository;
+import eduflow.demo.dto.RegisterRequest;
 import eduflow.demo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,11 @@ public class UserServices {
         return userRepository.findAll();
     }
 
-    public User createNewUser(User newUser) {
-        return userRepository.save(newUser);
+    public void createUser(RegisterRequest registerRequest) {
+        User user = new User();
+        user.setUsername(registerRequest.getUsername());
+        user.setPassword(registerRequest.getPassword());
+        user.setEmail(registerRequest.getEmail());
+        userRepository.save(user);
     }
 }
