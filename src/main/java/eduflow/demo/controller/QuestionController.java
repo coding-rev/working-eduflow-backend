@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1")
@@ -24,9 +25,5 @@ public class QuestionController {
         return ResponseEntity.ok(questionsService.getAllQuestions());
     }
 
-//    @PostMapping("/signup")
-//    public ResponseEntity signup(@RequestBody RegisterRequest registerRequest) {
-//        questionsService.createUser(registerRequest);
-//        return new ResponseEntity(HttpStatus.OK);
-//    }
+
 }

@@ -24,6 +24,7 @@ public class UserController {
 
     @PostMapping("/signup")
     public ResponseEntity signup(@RequestBody RegisterRequest registerRequest) {
+        System.out.println(registerRequest.getEmail());
         userService.createUser(registerRequest);
         return new ResponseEntity(HttpStatus.OK);
     }
